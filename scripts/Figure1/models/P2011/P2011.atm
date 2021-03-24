@@ -1,0 +1,223 @@
+//Created by libAntimony v2.7.0
+model *P2011()
+
+  // Compartments and Species:
+  compartment compartment_;
+  species cL_m in compartment_, cL in compartment_, cLmod in compartment_;
+  species cP in compartment_, cP9_m in compartment_, cP9 in compartment_;
+  species cP7_m in compartment_, cP7 in compartment_, cP5_m in compartment_;
+  species cP5 in compartment_, cT_m in compartment_, cT in compartment_, cE4_m in compartment_;
+  species cE4 in compartment_, cE3_m in compartment_, cE3 in compartment_;
+  species cE3n in compartment_, cLUX_m in compartment_, cLUX in compartment_;
+  species cCOP1c in compartment_, cCOP1n in compartment_, cCOP1d in compartment_;
+  species cEG in compartment_, cEC in compartment_, cZTL in compartment_;
+  species cZG in compartment_, cG_m in compartment_, cG in compartment_;
+
+  // Reactions:
+  cL_m_trscr:  => cL_m; compartment_*((q1*light*cP + n1*(g1^2/(g1^2 + (cP9 + cP7 + cP5 + cT)^2)))*gml - (m1*light + m2*(1 - light))*cL_m);
+  cL_trsl:  => cL; compartment_*(((p2 + p1*light)*cL_m)/gml - (m3*cL + (p3*cL^2)/(g3^2 + cL^2)));
+  cL_modif:  => cLmod; compartment_*((x*p3*cL^2)/(g3^2 + cL^2) - m4*cLmod);
+  cP_trsl:  => cP; compartment_*(p7*(1 - light)*(1 - cP) - m11*cP*light);
+  cP9_m_trscr:  => cP9_m; compartment_*((light*q3*cP + g8/(g8 + cEC)*(n4 + n7*(cL^2/(g9^2 + cL^2))))*gm9 - m12*cP9_m);
+  cP9_trsl:  => cP9; compartment_*((p8*cP9_m)/gm9 - (m13 + m22*(1 - light))*cP9);
+  cP7_m_trscr:  => cP7_m; compartment_*((n8*((cL + cLmod)^2/(g10^2 + (cL + cLmod)^2)) + n9*(cP9^2/(g11^2 + cP9^2)))*gm7 - m14*cP7_m);
+  cP7_trsl:  => cP7; compartment_*((p9*cP7_m)/gm7 - (m15 + m23*(1 - light))*cP7);
+  cP5_m_trscr:  => cP5_m; compartment_*((n10*(cLmod^2/(g12^2 + cLmod^2)) + n11*(cP7^2/(g13^2 + cP7^2)))*gm5 - m16*cP5_m);
+  cP5_trsl:  => cP5; compartment_*((p10*cP5_m)/gm5 - (m17 + m24*(1 - light))*cP5);
+  cT_m_trscr:  => cT_m; compartment_*(n2*(g4/(g4 + cEC))*(g5^2/(g5^2 + cL^2))*gmt - m5*cT_m);
+  cT_trsl:  => cT; compartment_*((p4*cT_m)/gmt - ((m6 + m7*(1 - light))*cT*(cZTL*p5 + cZG) + m8*cT));
+  cE4_m_trscr:  => cE4_m; compartment_*(n13*(g2/(cEC + g2))*(g6^2/(cL^2 + g6^2))*gm4 - m34*cE4_m);
+  cE4_trsl:  => cE4; compartment_*((p23*cE4_m)/gm4 - ((m35*cE4 + p25*cE4*cE3n) - (p21*p25*cE4*cE3n)/(p26*cLUX + p21 + m37*cCOP1d + m36*cCOP1n)));
+  cE3_m_trscr:  => cE3_m; compartment_*((n3*g16^2)/(cL^2 + g16^2)*gm3 - m26*cE3_m);
+  cE3_trsl:  => cE3; compartment_*((p16*cE3_m)/gm3 - m9*cE3*cCOP1c - p19*cE3 + p20*cE3n);
+  cE3n_import:  => cE3n; compartment_*(p19*cE3 - p20*cE3n - ((m29*cE3n*cCOP1n + m30*cE3n*cCOP1d + p25*cE4*cE3n) - (p21*p25*cE4*cE3n)/(p26*cLUX + p21 + m37*cCOP1d + m36*cCOP1n) + (p17*cE3n*p28*cG)/(p29 + m19 + p17*cE3n)));
+  cLUX_m_trscr:  => cLUX_m; compartment_*n13*(g2/(g2 + cEC))*(g6^2/(g6^2 + cL^2))*gm4;
+  cLUX_m_degr: cLUX_m => ; compartment_*m34*cLUX_m;
+  cLUX_trsl:  => cLUX; (compartment_*p27*cLUX_m)/gm4;
+  cLUX_degr: cLUX => ; compartment_*(m39*cLUX + (p26*cLUX*p25*cE4*cE3n)/(p26*cLUX + p21 + m37*cCOP1d + m36*cCOP1n));
+  cCOP1c_trsl:  => cCOP1c; compartment_*n5;
+  cCOP1c_degr: cCOP1c => ; compartment_*m27*cCOP1c*(1 + p15*light);
+  cCOP1n_import: cCOP1c => cCOP1n; compartment_*p6*cCOP1c;
+  cCOP1n_degr: cCOP1n => ; compartment_*m27*cCOP1n*(1 + p15*light);
+  cCOP1d_activ: cCOP1n => cCOP1d; compartment_*(n6*light*cP*cCOP1n + n14*cCOP1n);
+  cCOP1d_degr: cCOP1d => ; compartment_*m31*(1 + m33*(1 - light))*cCOP1d;
+  cG_m_trscr:  => cG_m; compartment_*(light*q2*cP + n12*(g14/(g14 + cEC))*(g15^2/(cL^2 + g15^2)))*gmg;
+  cG_m_degr: cG_m => ; compartment_*m18*cG_m;
+  cG_trsl:  => cG; (compartment_*p11*cG_m)/gmg;
+  cG_degr: cG => ; compartment_*((m19*cG + p28*cG) - (p29*p28*cG)/(p29 + m19 + p17*cE3n));
+  cG_cZTL_assoc: cG + cZTL => cZG; compartment_*(p12*light*cZTL*cG - p13*(1 - light)*cZG);
+  cZTL_trsl:  => cZTL; compartment_*p14;
+  cZTL_degr: cZTL => ; compartment_*m20*cZTL;
+  cZG_degr: cZG => ; compartment_*m21*cZG;
+  cG_cE3_assoc: cG + cE3 => cEG; compartment_*p17*cE3*cG;
+  cEG_degr: cEG => ; compartment_*((m9*cEG*cCOP1c + p18*cEG) - (p31*(p18*cEG + (p17*cE3n*p28*cG)/(p29 + m19 + p17*cE3n)))/(m9*cCOP1n + m10*cCOP1d + p31));
+  cEC_form:  => cEC; compartment_*((p26*cLUX*p25*cE4*cE3n)/(p26*cLUX + p21 + m37*cCOP1d + m36*cCOP1n));
+  cEC_degr: cEC => ; compartment_*(m36*cCOP1n*cEC + m37*cCOP1d*cEC + m32*cEC*(1 + (p24*light*((p28*cG)/(p29 + m19 + p17*cE3n) + (p18*cEG + (p17*cE3n*p28*cG)/(p29 + m19 + p17*cE3n))/(m9*cCOP1n + m10*cCOP1d + p31))^2)/(((p28*cG)/(p29 + m19 + p17*cE3n) + (p18*cEG + (p17*cE3n*p28*cG)/(p29 + m19 + p17*cE3n))/(m9*cCOP1n + m10*cCOP1d + p31))^2 + g7^2)));
+
+  // Species initializations:
+  cL_m = 1.05129004396331;
+  cL = 0.539353584650681;
+  cLmod = 0.0844581981958169;
+  cP = 0.95639188403066;
+  cP9_m = 0.0656063461084473;
+  cP9 = 0.0241160376628207;
+  cP7_m = 0.429686087062748;
+  cP7 = 0.124970188459902;
+  cP5_m = 0.0778001394975754;
+  cP5 = 0.0682932086174468;
+  cT_m = 0.0928798167556545;
+  cT = 0.0413478697796226;
+  cE4_m = 0.0949886368399;
+  cE4 = 0.198218446414934;
+  cE3_m = 0.282857048667234;
+  cE3 = 0.143911609144162;
+  cE3n = 0.0276005035594671;
+  cLUX_m = 0.0949886368399;
+  cLUX = 0.553663366668043;
+  cCOP1c = 0.326927726336486;
+  cCOP1n = 0.655890438841171;
+  cCOP1d = 0.251171915182196;
+  cEG = 0.00381490790681182;
+  cEC = 0.0689905389413188;
+  cZTL = 0.250995989453552;
+  cZG = 0.0773224813669429;
+  cG_m = 0.096830093091897;
+  cG = 0.0191017500069211;
+
+  // Compartment initializations:
+  compartment_ = ;
+
+  // Variable initializations:
+  q1 = 1.2;
+  light = 1;
+  n1 = 2.6;
+  g1 = 0.1;
+  gml = 1;
+  m1 = 0.54;
+  m2 = 0.24;
+  p2 = 0.27;
+  p1 = 0.13;
+  m3 = 0.2;
+  p3 = 0.1;
+  g3 = 0.6;
+  m4 = 0.2;
+  p7 = 0.3;
+  m11 = 1;
+  q3 = 2.8;
+  g8 = 0.01;
+  n4 = 0.07;
+  n7 = 0.2;
+  g9 = 0.3;
+  gm9 = 1;
+  m12 = 1;
+  p8 = 0.6;
+  m13 = 0.32;
+  m22 = 0.1;
+  n8 = 0.5;
+  g10 = 0.5;
+  n9 = 0.2;
+  g11 = 0.7;
+  gm7 = 1;
+  m14 = 0.4;
+  p9 = 0.8;
+  m15 = 0.7;
+  m23 = 1.8;
+  n10 = 0.4;
+  g12 = 0.2;
+  n11 = 0.6;
+  g13 = 1;
+  gm5 = 1;
+  m16 = 0.5;
+  p10 = 0.54;
+  m17 = 0.5;
+  m24 = 0.1;
+  n2 = 0.64;
+  g4 = 0.01;
+  g5 = 0.15;
+  gmt = 1;
+  m5 = 0.3;
+  p4 = 0.56;
+  m6 = 0.3;
+  m7 = 0.7;
+  p5 = 4;
+  m8 = 0.4;
+  n13 = 1.3;
+  g2 = 0.01;
+  g6 = 0.3;
+  gm4 = 1;
+  m34 = 0.6;
+  p23 = 0.37;
+  m35 = 0.3;
+  p25 = 8;
+  p21 = 1;
+  p26 = 0.3;
+  m37 = 0.8;
+  m36 = 0.1;
+  n3 = 0.29;
+  g16 = 0.3;
+  gm3 = 1;
+  m26 = 0.5;
+  p16 = 0.62;
+  m9 = 1.1;
+  p19 = 1;
+  p20 = 0.1;
+  m29 = 5;
+  m30 = 3;
+  p17 = 4.8;
+  p28 = 2;
+  p29 = 0.1;
+  m19 = 0.2;
+  p27 = 0.8;
+  m39 = 0.3;
+  n5 = 0.23;
+  m27 = 0.1;
+  p15 = 3;
+  p6 = 0.6;
+  n6 = 20;
+  n14 = 0.1;
+  m31 = 0.3;
+  m33 = 13;
+  q2 = 1.56;
+  n12 = 12.5;
+  g14 = 0.004;
+  g15 = 0.4;
+  gmg = 1;
+  m18 = 3.4;
+  p11 = 0.51;
+  p12 = 3.4;
+  p13 = 0.1;
+  p14 = 0.14;
+  m20 = 0.6;
+  m21 = 0.08;
+  p18 = 4;
+  p31 = 0.1;
+  m10 = 1;
+  m32 = 0.2;
+  p24 = 10;
+  g7 = 0.6;
+  x=1;
+
+  // Other declarations:
+  var light;
+  const compartment_, q1, n1, g1, gml, m1, m2, p2, p1, m3, p3, g3, m4, p7;
+  const m11, q3, g8, n4, n7, g9, gm9, m12, p8, m13, m22, n8, g10, n9, g11;
+  const gm7, m14, p9, m15, m23, n10, g12, n11, g13, gm5, m16, p10, m17, m24;
+  const n2, g4, g5, gmt, m5, p4, m6, m7, p5, m8, n13, g2, g6, gm4, m34, p23;
+  const m35, p25, p21, p26, m37, m36, n3, g16, gm3, m26, p16, m9, p19, p20;
+  const m29, m30, p17, p28, p29, m19, p27, m39, n5, m27, p15, p6, n6, n14;
+  const m31, m33, q2, n12, g14, g15, gmg, m18, p11, p12, p13, p14, m20, m21;
+  const p18, p31, m10, m32, p24, g7,x;
+
+  // Unit definitions:
+  unit substance = 1e-9 mole;
+  unit time_unit = 3.6e3 second;
+
+  // Display Names:
+  substance is "nM (default)";
+  time_unit is "hour (default)";
+
+  at (time % 24) > 12 and time < 24*11 : light = 0;
+  at (time % 24) < 12 and time < 24*11 : light =1;
+  at time >= 24*11: light= 1;
+
+end

@@ -1,0 +1,228 @@
+// Created by libAntimony v2.9.4
+model *U2020_5()
+
+  // Compartments and Species:
+  compartment cell;
+  species cL_m in cell, cL in cell, cLmod in cell, cP in cell, cP9_m in cell;
+  species cP9 in cell, cP7_m in cell, cP7 in cell, cP5_m in cell, cP5 in cell;
+  species cT_m in cell, cT in cell, cE4_m in cell, cE4 in cell, cE3_m in cell;
+  species cE3c in cell, cE3n in cell, cLUX_m in cell, cLUX in cell, cCOP1c in cell;
+  species cCOP1n in cell, cCOP1d in cell, cEGc in cell, cEC in cell, cZTL in cell;
+  species cZG in cell, cG_m in cell, cGc in cell, cGn in cell, cEGn in cell;
+  species cE34 in cell;
+
+  // Assignment Rules:
+  cGn_tot := cGn + cEGn;
+
+  // Reactions:
+  cL_m_trscr:  => cL_m; cell*(q1*L*cP*gml + (n1*g1^2/(g1^2 + (cP9 + cP7 + cP5 + cT)^2))*gml - (m1*L + m2*(1 - L))*cL_m);
+  cL_m_trans:  => cL; cell*((p2 + p1*L)*cL_m/gml - m3*cL - p3*cL^2/(cL^2 + g3^2));
+  cL_mod_pro:  => cLmod; cell*(p3*cL^2/(cL^2 + g3^2) - m3*cLmod);
+  cP_prod:  => cP; cell*(p7*(1 - L)*(1 - cP) - m11*cP*L);
+  cE4_trscr:  => cE4_m; cell*(((n13*g2/(g2 + cEC))*g6^2/(g6^2 + cL^2))*gm4 - m34*cE4_m);
+  cE4_trans:  => cE4; cell*((p23*cE4_m/gm4 - m35*cE4 - p25*cE4*cE3n) + p21*cE34);
+  cE3_trscr:  => cE3_m; cell*((n3*g16^2/(g16^2 + cL^2))*gm3 - m26*cE3_m);
+  cE3c_trans:  => cE3c; cell*((p16*cE3_m/gm3 - m9*cE3c*cCOP1c - p17*cE3c*cGc - p19*cE3c) + p20*cE3n);
+  cE3n_trans:  => cE3n; cell*((p19*cE3c - p20*cE3n - p17*cE3n*cGn - m30*cE3n*cCOP1d - m29*cE3n*cCOP1n) + p21*cE34 - p25*cE4*cE3n);
+  cLUX_trscr:  => cLUX_m; cell*(((n13*g2/(g2 + cEC))*g6^2/(g6^2 + cL^2))*gm4 - m34*cLUX_m);
+  cLUX_trans:  => cLUX; cell*(p27*cLUX_m/gm4 - m39*cLUX - p26*cLUX*cE34);
+  cCOP1c_prod:  => cCOP1c; cell*(n5 - p6*cCOP1c - m27*cCOP1c*(1 + p15*L));
+  cCOP1n_trans:  => cCOP1n; cell*(p6*cCOP1c - n6*L*cP*cCOP1n - n14*cCOP1n - m27*cCOP1n*(1 + p15*L));
+  cCOP1d_trans:  => cCOP1d; cell*(n14*cCOP1n + n6*L*cP*cCOP1n - m31*(1 + m33*(1 - L))*cCOP1d);
+  cEGc_prod:  => cEGc; cell*((p17*cE3c*cGc - m9*cEGc*cCOP1c - p18*cEGc) + p31*cEGn);
+  cEC_form:  => cEC; cell*(p26*cLUX*cE34 - m36*cEC*cCOP1n - m37*cEC*cCOP1d - m32*cEC*(1 + p24*L*cGn_tot^2/(g7^2 + cGn_tot^2)));
+  cZTL_prod:  => cZTL; cell*((p14 - p12*L*cZTL*cGc) + p13*cZG*(1 - L) - m20*cZTL);
+  cZG_prod:  => cZG; cell*(p12*L*cZTL*cGc - p13*cZG*(1 - L) - m21*cZG);
+  cG_m_trscr:  => cG_m; cell*(L*q2*cP*gmg + ((n12*g14/(g14 + cEC))*g15^2/(g15^2 + cL^2))*gmg - m18*cG_m);
+  cG_trans:  => cGc; cell*(((p11*cG_m/gmg - p12*L*cZTL*cGc) + p13*cZG*(1 - L) - m19*cGc - p17*cE3c*cGc - p28*cGc) + p29*cGn);
+  cGn_traspo:  => cGn; cell*(p28*cGc - (p29 + m19 + p17*cE3n)*cGn);
+  cE34_compl:  => cE34; cell*(p25*cE4*cE3n - (p26*cLUX + p21 + m37*cCOP1d + m36*cCOP1n)*cE34);
+  cEGn_tranp:  => cEGn; cell*(p18*cEGc + p17*cE3n*cGn - (m9*cCOP1n + m10*cCOP1d + p31)*cEGn);
+  cP9mt_synt:  => cP9_m; cell*(q3t*L*cP*gm9 + ((((nt1*(g1t + at1*cLmod)/(g1t + cLmod))*g2t^2/(g2t^2 + cL^2))*g3t/(g3t + cEC))*g4t^2/(g4t^2 + (cP5 + cT)^2))*gm9 - m1t*cP9_m);
+  cP9t_synt:  => cP9; cell*(p1t*cP9_m/gm9 - mp1t*cP9);
+  cP7msynt:  => cP7_m; cell*((((nt2*g5t^2/(g5t^2 + cL^2))*g6t/(g6t + cEC))*g7t^2/(g7t^2 + (cP5 + cT)^2))*gm7 - m2t*cP7_m);
+  cP7tsynt:  => cP7; cell*(p2t*cP7_m/gm7 - (mp2t + mp3t*(1 - L))*cP7);
+  cP5mtsynt:  => cP5_m; cell*(((((nt3*(g8t + at2*cLmod)/(g8t + cLmod))*g9t^2/(g9t^2 + cL^2))*g10t/(g10t + cEC))*g11t^2/(g11t^2 + cT^2))*gm5 - m3t*cP5_m);
+  cP5tsynt:  => cP5; cell*(p3t*cP5_m/gm5 - (mp4t + mp5t*(1 - L))*cP5);
+  cTmtsynt:  => cT_m; cell*(((((nt4*(g12t + at3*cLmod)/(g12t + cLmod))*g13t^2/(g13t^2 + cL^2))*g14t/(g14t + cEC))*g15t^2/(g15t^2 + cT^2))*gmt - m4t*cT_m);
+  cTtsynt:  => cT; cell*(p4t*cT_m/gmt - (mp6t + mp7t*(1 - L))*cT*(p5t*cZTL + cZG) - mp8t*cT);
+
+  // Species initializations:
+  cL_m = 0.0359335388215536;
+  cL = 0.0742313694717752;
+  cLmod = 0.0264493060997695;
+  cP = 3.32734560915405e-209;
+  cP9_m = 0.00030883494902405;
+  cP9 = 0.00725203854824796;
+  cP7_m = 0.319661246247897;
+  cP7 = 0.609799204484332;
+  cP5_m = 0.0362535793513859;
+  cP5 = 0.156545098276963;
+  cT_m = 0.425225276949522;
+  cT = 0.614994493561132;
+  cE4_m = 1.00198211880041;
+  cE4 = 1.71305251228305;
+  cE3_m = 0.776275860340074;
+  cE3c = 0.225749663058059;
+  cE3n = 0.012316571914747;
+  cLUX_m = 1.00198211880041;
+  cLUX = 11.0948506520581;
+  cCOP1c = 0.23;
+  cCOP1n = 0.276;
+  cCOP1d = 0.0920000000000001;
+  cEGc = 0.229607491794162;
+  cEC = 0.159907370813051;
+  cZTL = 0.0347101756107509;
+  cZG = 6.51620450218881;
+  cG_m = 0.410920285435536;
+  cGc = 0.0221621337239421;
+  cGn = 0.0433532112098327;
+  cEGn = 0.0150401622488514;
+  cE34 = 0.321176033550425;
+
+  // Compartment initializations:
+  cell = 1;
+
+  // Variable initializations:
+  q1 = 0.841496832798375;
+  L = 1;
+  gml = 240.398303427109;
+  n1 = 0.781537894237397;
+  g1 = 0.260262671636261;
+  m1 = 0.545986246550687;
+  m2 = 0.0348915059069121;
+  p2 = 0.205149252517579;
+  p1 = 0.188149760634004;
+  m3 = 0.180150268894767;
+  p3 = 0.206572923479941;
+  g3 = 0.812100418723142;
+  p7 = 0.3;
+  m11 = 1;
+  n13 = 2.15701904394954;
+  g2 = 0.0337228841982393;
+  g6 = 0.198367740421444;
+  gm4 = 59.1001965740934;
+  m34 = 0.589508600668093;
+  p23 = 0.438860884942515;
+  m35 = 0.249529832531924;
+  p25 = 210.643342589118;
+  p21 = 12.7288312134645;
+  n3 = 0.43932853895905;
+  g16 = 0.203345279729513;
+  gm3 = 37.4270777543611;
+  m26 = 0.478272544293594;
+  p16 = 1.64352128180098;
+  m9 = 7.58125093308965;
+  p17 = 67.7534755782796;
+  p19 = 2.22496033315838;
+  p20 = 0.0799111037052215;
+  m30 = 2.96975466386422;
+  m29 = 29.3083301449758;
+  p27 = 4.55363328728867;
+  m39 = 0.545909193390194;
+  p26 = 0.0606233164234201;
+  n5 = 0.23;
+  p6 = 0.6;
+  m27 = 0.1;
+  p15 = 3;
+  n6 = 20;
+  n14 = 0.1;
+  m31 = 0.3;
+  m33 = 13;
+  p18 = 0.0749639101091455;
+  p31 = 0.161869022422106;
+  m36 = 0.15148834296834;
+  m37 = 1.05441645149131;
+  m32 = 0.0892436820472363;
+  p24 = 19.6006405914063;
+  g7 = 0.0779586173491793;
+  p14 = 0.383205740023471;
+  p12 = 152.151909593701;
+  p13 = 0.0205239128182747;
+  m20 = 7.4876290519116;
+  m21 = 0.0252983808092898;
+  q2 = 2.02267827330258;
+  gmg = 71.231512461066;
+  n12 = 17.4449066870199;
+  g14 = 0.0137633831764236;
+  g15 = 0.258817200723681;
+  m18 = 3.55712358040821;
+  p11 = 1.71333174735382;
+  m19 = 3.86179635322545;
+  p28 = 8.21289361706873;
+  p29 = 0.160497453516939;
+  m10 = 16.3714361213747;
+  q3t = 1.90671460103782;
+  gm9 = 69.5228161130992;
+  nt1 = 0.0998517164980201;
+  g1t = 0.821319616223297;
+  at1 = 0.0145508339328512;
+  g2t = 30.3011239547852;
+  g3t = 0.00207375110682441;
+  g4t = 0.161768051272999;
+  m1t = 0.422681654112834;
+  p1t = 5.1596397985342;
+  mp1t = 0.387257254037416;
+  nt2 = 55.2573684368903;
+  g5t = 43.2617948134786;
+  g6t = 0.0134238392658725;
+  g7t = 0.069097239401026;
+  gm7 = 36.7151458774324;
+  m2t = 0.267167827929817;
+  p2t = 1.57145956353351;
+  mp2t = 0.970505131185091;
+  mp3t = 21.0523737913589;
+  nt3 = 7.24525113742064;
+  g8t = 0.0624029497515538;
+  at2 = 3.64830250545861;
+  g9t = 0.650562915708941;
+  g10t = 0.0583886862165768;
+  g11t = 0.280930632192885;
+  gm5 = 10.8150058471228;
+  m3t = 16.5444092090597;
+  p3t = 0.654170928188466;
+  mp4t = 0.379807008904375;
+  mp5t = 0.000624112146399548;
+  nt4 = 0.303775822913661;
+  g12t = 8.16569161154828;
+  at3 = 5.52171185226064;
+  g13t = 0.196249829958496;
+  g14t = 0.0282123850038074;
+  g15t = 35.4481190477711;
+  gmt = 98.7139386452086;
+  m4t = 0.219512108071675;
+  p4t = 1.30511179558745;
+  mp6t = 0.0894668226586183;
+  mp7t = 0.0544308845014331;
+  p5t = 2.06288561051429;
+  mp8t = 0.401184816501549;
+
+  // Other declarations:
+  var cGn_tot, L;
+  const cell, q1, gml, n1, g1, m1, m2, p2, p1, m3, p3, g3, p7, m11, n13, g2;
+  const g6, gm4, m34, p23, m35, p25, p21, n3, g16, gm3, m26, p16, m9, p17;
+  const p19, p20, m30, m29, p27, m39, p26, n5, p6, m27, p15, n6, n14, m31;
+  const m33, p18, p31, m36, m37, m32, p24, g7, p14, p12, p13, m20, m21, q2;
+  const gmg, n12, g14, g15, m18, p11, m19, p28, p29, m10, q3t, gm9, nt1, g1t;
+  const at1, g2t, g3t, g4t, m1t, p1t, mp1t, nt2, g5t, g6t, g7t, gm7, m2t;
+  const p2t, mp2t, mp3t, nt3, g8t, at2, g9t, g10t, g11t, gm5, m3t, p3t, mp4t;
+  const mp5t, nt4, g12t, at3, g13t, g14t, g15t, gmt, m4t, p4t, mp6t, mp7t;
+  const p5t, mp8t;
+
+  // Unit definitions:
+  unit substance = 1e-9 mole;
+  unit extent = 1e-9 mole;
+  unit time_unit = 3.6e3 second;
+  unit area = metre^2;
+  unit length = metre;
+  unit volume = litre;
+
+  // Display Names:
+  substance is "nM (default)";
+  time_unit is "hour (default)";
+
+  at (time % 24) > 12 and time < 24*11 : L = 0;
+  at (time % 24) < 12 and time < 24*11 : L =1;
+  at time >= 24*11: L= 1;
+
+end

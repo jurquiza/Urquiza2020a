@@ -1,0 +1,224 @@
+// Created by libAntimony v2.9.4
+model *U2020_3()
+
+  // Compartments and Species:
+  compartment cell;
+  species cL_m in cell, cL in cell, cLmod in cell, cP in cell, cP9_m in cell;
+  species cP9 in cell, cP7_m in cell, cP7 in cell, cP5_m in cell, cP5 in cell;
+  species cT_m in cell, cT in cell, cE4_m in cell, cE4 in cell, cE3_m in cell;
+  species cE3c in cell, cE3n in cell, cLUX_m in cell, cLUX in cell, cCOP1c in cell;
+  species cCOP1n in cell, cCOP1d in cell, cEGc in cell, cEC in cell, cZTL in cell;
+  species cZG in cell, cG_m in cell, cGc in cell, cGn in cell, cEGn in cell;
+  species cE34 in cell;
+
+  // Assignment Rules:
+  cGn_tot := cGn + cEGn;
+
+  // Reactions:
+  cL_m_trscr:  => cL_m; cell*(q1*L*cP*gml + (n1*g1^2/(g1^2 + (cP9 + cP7 + cP5 + cT)^2))*gml - (m1*L + m2*(1 - L))*cL_m);
+  cL_m_trans:  => cL; cell*((p2 + p1*L)*cL_m/gml - m3*cL - p3*cL^2/(cL^2 + g3^2));
+  cL_mod_pro:  => cLmod; cell*(p3*cL^2/(cL^2 + g3^2) - m3*cLmod);
+  cP_prod:  => cP; cell*(p7*(1 - L)*(1 - cP) - m11*cP*L);
+  cP9_m_trscr:  => cP9_m; cell*(L*q3*cP*gm9 + (g8/(g8 + cEC))*(n4 + n7*cL^2/(cL^2 + g9^2))*gm9 - m12*cP9_m);
+  cP9_trans:  => cP9; cell*(p8*cP9_m/gm9 - (m13 + m22*(1 - L))*cP9);
+  cP7_m_trscr:  => cP7_m; cell*((n8*(cL + cLmod)^2/(g10^2 + (cL + cLmod)^2))*gm7 + (n9*cP9^2/(g11^2 + cP9^2))*gm7 - m14*cP7_m);
+  cP7_trans:  => cP7; cell*(p9*cP7_m/gm7 - (m15 + m23*(1 - L))*cP7);
+  cP5_trscr:  => cP5_m; cell*((n10*cLmod^2/(g12^2 + cLmod^2))*gm5 + (n11*cP7^2/(g13^2 + cP7^2))*gm5 - m16*cP5_m);
+  cP5_trans:  => cP5; cell*(p10*cP5_m/gm5 - (m17 + m24*(1 - L))*cP5);
+  cT_m_trscr:  => cT_m; cell*(((n2*g4/(g4 + cEC))*g5^2/(g5^2 + cL^2))*gmt - m5*cT_m);
+  cT_trans:  => cT; cell*(p4*cT_m/gmt - (m6 + m7*(1 - L))*cT*(cZTL*p5 + cZG) - m8*cT);
+  cE4_trscr:  => cE4_m; cell*(((n13*g2/(g2 + cEC))*g6^2/(g6^2 + cL^2))*gm4 - m34*cE4_m);
+  cE4_trans:  => cE4; cell*((p23*cE4_m/gm4 - m35*cE4 - p25*cE4*cE3n) + p21*cE34);
+  cE3_trscr:  => cE3_m; cell*((n3*g16^2/(g16^2 + cL^2))*gm3 - m26*cE3_m);
+  cE3c_trans:  => cE3c; cell*((p16*cE3_m/gm3 - m9*cE3c*cCOP1c - p17*cE3c*cGc - p19*cE3c) + p20*cE3n);
+  cE3n_trans:  => cE3n; cell*((p19*cE3c - p20*cE3n - p17*cE3n*cGn - m30*cE3n*cCOP1d - m29*cE3n*cCOP1n) + p21*cE34 - p25*cE4*cE3n);
+  cLUX_trscr:  => cLUX_m; cell*(((n13*g2/(g2 + cEC))*g6^2/(g6^2 + cL^2))*gm4 - m34*cLUX_m);
+  cLUX_trans:  => cLUX; cell*(p27*cLUX_m/gm4 - m39*cLUX - p26*cLUX*cE34);
+  cCOP1c_prod:  => cCOP1c; cell*(n5 - p6*cCOP1c - m27*cCOP1c*(1 + p15*L));
+  cCOP1n_trans:  => cCOP1n; cell*(p6*cCOP1c - n6*L*cP*cCOP1n - n14*cCOP1n - m27*cCOP1n*(1 + p15*L));
+  cCOP1d_trans:  => cCOP1d; cell*(n14*cCOP1n + n6*L*cP*cCOP1n - m31*(1 + m33*(1 - L))*cCOP1d);
+  cEGc_prod:  => cEGc; cell*((p17*cE3c*cGc - m9*cEGc*cCOP1c - p18*cEGc) + p31*cEGn);
+  cEC_form:  => cEC; cell*(p26*cLUX*cE34 - m36*cEC*cCOP1n - m37*cEC*cCOP1d - m32*cEC*(1 + p24*L*cGn_tot^2/(g7^2 + cGn_tot^2)));
+  cZTL_prod:  => cZTL; cell*((p14 - p12*L*cZTL*cGc) + p13*cZG*(1 - L) - m20*cZTL);
+  cZG_prod:  => cZG; cell*(p12*L*cZTL*cGc - p13*cZG*(1 - L) - m21*cZG);
+  cG_m_trscr:  => cG_m; cell*(L*q2*cP*gmg + ((n12*g14/(g14 + cEC))*g15^2/(g15^2 + cL^2))*gmg - m18*cG_m);
+  cG_trans:  => cGc; cell*(((p11*cG_m/gmg - p12*L*cZTL*cGc) + p13*cZG*(1 - L) - m19*cGc - p17*cE3c*cGc - p28*cGc) + p29*cGn);
+  cGn_traspo:  => cGn; cell*(p28*cGc - (p29 + m19 + p17*cE3n)*cGn);
+  cE34_compl:  => cE34; cell*(p25*cE4*cE3n - (p26*cLUX + p21 + m37*cCOP1d + m36*cCOP1n)*cE34);
+  cEGn_tranp:  => cEGn; cell*(p18*cEGc + p17*cE3n*cGn - (m9*cCOP1n + m10*cCOP1d + p31)*cEGn);
+
+  // Species initializations:
+  cL_m = 1.05129004396331*240.398303596736;
+  cL = 0.134882246800611;
+  cLmod = 0.153619044997695;
+  cP = 9.4177741749482e-32;
+  cP9_m = 0.0656063461084473*69.5228161344057;
+  cP9 = 0.0444600273145643;
+  cP7_m = 0.429686087062748*36.7151462664629;
+  cP7 = 0.234575257412019;
+  cP5_m = 0.778001394975754*10.8150058554228;
+  cP5 = 0.498901179591259;
+  cT_m = 0.0928798167556545*98.7139376747197;
+  cT = 0.558700321767383;
+  cE4_m = 0.0949886368399*59.100196230293;
+  cE4 = 1.09065387899409;
+  cE3_m = 0.282857048667234*37.4270777712061;
+  cE3c = 0.145090835491192;
+  cE3n = 0.00597318861783341;
+  cLUX_m = 0.0949886368399*59.100196230293;
+  cLUX = 4.64494409785375;
+  cCOP1c = 0.23;
+  cCOP1n = 0.276;
+  cCOP1d = 0.092;
+  cEGc = 0.234360343662386;
+  cEC = 0.00938826503162791;
+  cZTL = 0.113925453138486;
+  cZG = 0.835425605398341;
+  cG_m = 0.096830093091897*71.2315112597985;
+  cGc = 0.0339624833418517;
+  cGn = 0.452116499721156;
+  cEGn = 0.112112173133488;
+  cE34 = 0.0290228583512842;
+
+  // Compartment initializations:
+  cell = 1;
+
+  // Variable initializations:
+  q1 = 224.070236452074;
+  L = 1;
+  gml = 1;
+  n1 = 1012.37718630491;
+  g1 = 0.0924989429194312;
+  m1 = 0.472478224440627;
+  m2 = 0.270383383879274;
+  p2 = 0.00122878848822599;
+  p1 = 0.000890384681341936;
+  m3 = 0.209726654834423;
+  p3 = 0.138507260209719;
+  g3 = 0.401907624866968;
+  p7 = 0.3;
+  m11 = 1;
+  q3 = 175.758127101537;
+  gm9 = 1;
+  g8 = 0.013727897692468;
+  n4 = 3.79395856628938;
+  n7 = 14.2167613360537;
+  g9 = 0.303207630540409;
+  m12 = 1.51872508902782;
+  p8 = 0.00690982654847693;
+  m13 = 0.500914464916436;
+  m22 = 0.0624119331983405;
+  n8 = 18.403678260775;
+  g10 = 0.613888529345322;
+  gm7 = 1;
+  n9 = 5.88499980572144;
+  g11 = 0.827141647779455;
+  m14 = 0.440879974257324;
+  p9 = 0.0180063039896456;
+  m15 = 0.982634835562064;
+  m23 = 1.48057704025775;
+  n10 = 5.01512745875978;
+  g12 = 0.153738014145348;
+  gm5 = 1;
+  n11 = 6.69496958196885;
+  g13 = 1.11866877018643;
+  m16 = 0.632510327340643;
+  p10 = 0.0521883128509265;
+  m17 = 0.606609704046493;
+  m24 = 0.0766744701909765;
+  n2 = 74.5202814722954;
+  g4 = 0.015186421346016;
+  g5 = 0.190782710296209;
+  gmt = 1;
+  m5 = 0.365603548533465;
+  p4 = 0.00580761646795074;
+  m6 = 0.106923346685408;
+  m7 = 0.202204789877226;
+  p5 = 10.5410689922583;
+  m8 = 0.386558514560172;
+  n13 = 123.397741207481;
+  g2 = 0.0200396142598497;
+  g6 = 0.222876410841046;
+  gm4 = 1;
+  m34 = 0.639825570593053;
+  p23 = 0.00489292414588834;
+  m35 = 0.247772032610646;
+  p25 = 17.7324473475865;
+  p21 = 2.65390547631073;
+  n3 = 17.9030199538489;
+  g16 = 0.255910593485932;
+  gm3 = 1;
+  m26 = 0.412244305031997;
+  p16 = 0.0262187306980944;
+  m9 = 5.23628610457024;
+  p17 = 63.6643806479195;
+  p19 = 1.69252446195173;
+  p20 = 0.0857149842402559;
+  m30 = 13.0722781787554;
+  m29 = 15.4767161839369;
+  p27 = 0.0262030071921937;
+  m39 = 0.394230519151613;
+  p26 = 0.179491414011742;
+  n5 = 0.23;
+  p6 = 0.6;
+  m27 = 0.1;
+  p15 = 3;
+  n6 = 20;
+  n14 = 0.1;
+  m31 = 0.3;
+  m33 = 13;
+  p18 = 0.236910457951958;
+  p31 = 0.140795715737152;
+  m36 = 0.0988627559324387;
+  m37 = 0.638671244532235;
+  m32 = 0.17786749055661;
+  p24 = 11.2645147978309;
+  g7 = 0.199260140711394;
+  p14 = 0.27147097156507;
+  p12 = 30.4292560794357;
+  p13 = 0.0765570658950953;
+  m20 = 1.23924716050164;
+  m21 = 0.0800304547984497;
+  q2 = 149.393841965426;
+  gmg = 1;
+  n12 = 1047.3417892582;
+  g14 = 0.00694586247895883;
+  g15 = 0.384196561838963;
+  m18 = 4.17528060369758;
+  p11 = 0.0104348821303489;
+  m19 = 1.18499836603551;
+  p28 = 21.5197740727555;
+  p29 = 0.305804164480483;
+  m10 = 4.16475304417486;
+  cEG = 0.00381490790681182;
+  m4 = 0.2;
+
+  // Other declarations:
+  var cGn_tot, L;
+  const cell, q1, gml, n1, g1, m1, m2, p2, p1, m3, p3, g3, p7, m11, q3, gm9;
+  const g8, n4, n7, g9, m12, p8, m13, m22, n8, g10, gm7, n9, g11, m14, p9;
+  const m15, m23, n10, g12, gm5, n11, g13, m16, p10, m17, m24, n2, g4, g5;
+  const gmt, m5, p4, m6, m7, p5, m8, n13, g2, g6, gm4, m34, p23, m35, p25;
+  const p21, n3, g16, gm3, m26, p16, m9, p17, p19, p20, m30, m29, p27, m39;
+  const p26, n5, p6, m27, p15, n6, n14, m31, m33, p18, p31, m36, m37, m32;
+  const p24, g7, p14, p12, p13, m20, m21, q2, gmg, n12, g14, g15, m18, p11;
+  const m19, p28, p29, m10, cEG, m4;
+
+  // Unit definitions:
+  unit substance = 1e-9 mole;
+  unit extent = 1e-9 mole;
+  unit time_unit = 3.6e3 second;
+  unit area = metre^2;
+  unit length = metre;
+  unit volume = litre;
+
+  // Display Names:
+  substance is "nM (default)";
+  time_unit is "hour (default)";
+
+  at (time % 24) > 12 and time < 24*11 : L = 0;
+  at (time % 24) < 12 and time < 24*11 : L =1;
+  at time >= 24*11: L= 1;
+
+  
+end

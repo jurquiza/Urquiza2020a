@@ -1,0 +1,1 @@
+nohup jupyter notebook --allow-root --ip="0.0.0.0" --NotebookApp.password='' --NotebookApp.token='' --no-browser --NotebookApp.notebook_dir='/model/' > log.out &

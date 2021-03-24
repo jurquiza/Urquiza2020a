@@ -1,0 +1,2181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model id="U2020_6" name="U2020_6" substanceUnits="substance" timeUnits="time_unit" volumeUnits="volume" areaUnits="area" lengthUnits="length" extentUnits="extent">
+    <listOfUnitDefinitions>
+      <unitDefinition id="substance" name="nM (default)">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-9" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="extent">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-9" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time_unit" name="hour (default)">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="3" multiplier="3.6"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="length">
+        <listOfUnits>
+          <unit kind="metre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="volume">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cell" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="cL_m" compartment="cell" initialConcentration="39.6595712586905" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cL" compartment="cell" initialConcentration="0.159231408043891" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cLmod" compartment="cell" initialConcentration="0.0505589290237111" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cP" compartment="cell" initialConcentration="2.51327558886306e-26" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cP9_m" compartment="cell" initialConcentration="0.00691340238982438" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cP9" compartment="cell" initialConcentration="0.00177011483737896" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cP7_m" compartment="cell" initialConcentration="3.75179806444988" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cP7" compartment="cell" initialConcentration="0.168097243698992" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cP5_m" compartment="cell" initialConcentration="0.307417936839564" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cP5" compartment="cell" initialConcentration="0.0451331558246782" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cT_m" compartment="cell" initialConcentration="18.1834654122416" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cT" compartment="cell" initialConcentration="0.37025473862028" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cE4_m" compartment="cell" initialConcentration="18.0950456720111" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cE4" compartment="cell" initialConcentration="0.624114381292733" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cE3_m" compartment="cell" initialConcentration="24.2753790086823" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cE3c" compartment="cell" initialConcentration="0.245724763796227" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cE3n" compartment="cell" initialConcentration="0.0512383989698776" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cLUX_m" compartment="cell" initialConcentration="18.0950456720111" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cLUX" compartment="cell" initialConcentration="4.31435333565222" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cCOP1c" compartment="cell" initialConcentration="0.23" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cCOP1n" compartment="cell" initialConcentration="0.276" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cCOP1d" compartment="cell" initialConcentration="0.0920000000000002" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cEGc" compartment="cell" initialConcentration="0.0359441748823303" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cEC" compartment="cell" initialConcentration="0.544245606154979" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cZTL" compartment="cell" initialConcentration="0.0469964700951772" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cZG" compartment="cell" initialConcentration="4.87561660732824" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cG_m" compartment="cell" initialConcentration="5.48708692959085" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cGc" compartment="cell" initialConcentration="0.00363031881456219" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cGn" compartment="cell" initialConcentration="0.00441520376642131" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cEGn" compartment="cell" initialConcentration="0.00480196132446422" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cE34" compartment="cell" initialConcentration="0.497553956395089" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="cGn_tot" value="0.00921716509088553" constant="false"/>
+      <parameter id="q1" value="201.991035177866" constant="true"/>
+      <parameter id="L" value="1" constant="false"/>
+      <parameter id="gml" value="1" constant="true"/>
+      <parameter id="n1" value="202.990103171986" constant="true"/>
+      <parameter id="g1" value="0.275984353959814" constant="true"/>
+      <parameter id="m1" value="0.670834664613965" constant="true"/>
+      <parameter id="m2" value="0.0340413467654981" constant="true"/>
+      <parameter id="p2" value="0.000939666035113479" constant="true"/>
+      <parameter id="p1" value="0.000881090281638221" constant="true"/>
+      <parameter id="m3" value="0.18299561510966" constant="true"/>
+      <parameter id="p3" value="0.21118830157439" constant="true"/>
+      <parameter id="g3" value="0.674060966156951" constant="true"/>
+      <parameter id="p7" value="0.3" constant="true"/>
+      <parameter id="m11" value="1" constant="true"/>
+      <parameter id="n13" value="130.717987864745" constant="true"/>
+      <parameter id="g2" value="0.0358219115649522" constant="true"/>
+      <parameter id="g6" value="0.186275172442361" constant="true"/>
+      <parameter id="gm4" value="1" constant="true"/>
+      <parameter id="m34" value="0.520001910877006" constant="true"/>
+      <parameter id="p23" value="0.00839922303980085" constant="true"/>
+      <parameter id="m35" value="0.251701024004244" constant="true"/>
+      <parameter id="p25" value="201.999763051878" constant="true"/>
+      <parameter id="p21" value="12.6922327745755" constant="true"/>
+      <parameter id="n3" value="16.1088748271814" constant="true"/>
+      <parameter id="g16" value="0.201199839835339" constant="true"/>
+      <parameter id="gm3" value="1" constant="true"/>
+      <parameter id="m26" value="0.479114489727566" constant="true"/>
+      <parameter id="p16" value="0.0435463647573642" constant="true"/>
+      <parameter id="m9" value="7.65600855355685" constant="true"/>
+      <parameter id="p17" value="66.6625503589071" constant="true"/>
+      <parameter id="p19" value="2.37343659427333" constant="true"/>
+      <parameter id="p20" value="0.0794133123840745" constant="true"/>
+      <parameter id="m30" value="3.1404732729468" constant="true"/>
+      <parameter id="m29" value="28.1321265096871" constant="true"/>
+      <parameter id="p27" value="0.075613736866656" constant="true"/>
+      <parameter id="m39" value="0.550029312140892" constant="true"/>
+      <parameter id="p26" value="0.058910195185597" constant="true"/>
+      <parameter id="n5" value="0.23" constant="true"/>
+      <parameter id="p6" value="0.6" constant="true"/>
+      <parameter id="m27" value="0.1" constant="true"/>
+      <parameter id="p15" value="3" constant="true"/>
+      <parameter id="n6" value="20" constant="true"/>
+      <parameter id="n14" value="0.1" constant="true"/>
+      <parameter id="m31" value="0.3" constant="true"/>
+      <parameter id="m33" value="13" constant="true"/>
+      <parameter id="p18" value="0.0717683045911937" constant="true"/>
+      <parameter id="p31" value="0.167849806458022" constant="true"/>
+      <parameter id="m36" value="0.154173689110563" constant="true"/>
+      <parameter id="m37" value="1.05942307506605" constant="true"/>
+      <parameter id="m32" value="0.0895010003824338" constant="true"/>
+      <parameter id="p24" value="20.605425719513" constant="true"/>
+      <parameter id="g7" value="0.0813462612176367" constant="true"/>
+      <parameter id="p14" value="0.38489210280455" constant="true"/>
+      <parameter id="p12" value="141.503431737642" constant="true"/>
+      <parameter id="p13" value="0.0205581300721078" constant="true"/>
+      <parameter id="m20" value="7.67120912129754" constant="true"/>
+      <parameter id="m21" value="0.0242363066130928" constant="true"/>
+      <parameter id="q2" value="152.478483322193" constant="true"/>
+      <parameter id="gmg" value="1" constant="true"/>
+      <parameter id="n12" value="1143.99321521799" constant="true"/>
+      <parameter id="g14" value="0.0147018219920793" constant="true"/>
+      <parameter id="g15" value="0.272359463394618" constant="true"/>
+      <parameter id="m18" value="4.17966750897608" constant="true"/>
+      <parameter id="p11" value="0.023484550110898" constant="true"/>
+      <parameter id="m19" value="3.86135682339273" constant="true"/>
+      <parameter id="p28" value="8.87510536167421" constant="true"/>
+      <parameter id="p29" value="0.166143604608238" constant="true"/>
+      <parameter id="m10" value="15.6451190006989" constant="true"/>
+      <parameter id="q3t" value="126.949241336954" constant="true"/>
+      <parameter id="gm9" value="1" constant="true"/>
+      <parameter id="nt1" value="7.13676538604487" constant="true"/>
+      <parameter id="g1t" value="0.788922054218425" constant="true"/>
+      <parameter id="at1" value="0.0154025001255462" constant="true"/>
+      <parameter id="g2t" value="30.9687905579783" constant="true"/>
+      <parameter id="g3t" value="0.00193267898314948" constant="true"/>
+      <parameter id="g4t" value="0.161894595748038" constant="true"/>
+      <parameter id="m1t" value="0.466643330264332" constant="true"/>
+      <parameter id="p1t" value="0.0746172939314059" constant="true"/>
+      <parameter id="mp1t" value="0.485683294132029" constant="true"/>
+      <parameter id="nt2" value="1853.85280491463" constant="true"/>
+      <parameter id="g5t" value="42.8392279257992" constant="true"/>
+      <parameter id="g6t" value="0.0136737178136097" constant="true"/>
+      <parameter id="g7t" value="0.0655953918793448" constant="true"/>
+      <parameter id="gm7" value="1" constant="true"/>
+      <parameter id="m2t" value="0.32656907480463" constant="true"/>
+      <parameter id="p2t" value="0.0400022830628038" constant="true"/>
+      <parameter id="mp2t" value="1.00500938018689" constant="true"/>
+      <parameter id="mp3t" value="19.9338066250335" constant="true"/>
+      <parameter id="nt3" value="81.8692593216738" constant="true"/>
+      <parameter id="g8t" value="0.0589549371044656" constant="true"/>
+      <parameter id="at2" value="3.54004019931696" constant="true"/>
+      <parameter id="g9t" value="0.64485300787834" constant="true"/>
+      <parameter id="g10t" value="0.0542775493370675" constant="true"/>
+      <parameter id="g11t" value="0.260912622810023" constant="true"/>
+      <parameter id="gm5" value="1" constant="true"/>
+      <parameter id="m3t" value="16.2011740348675" constant="true"/>
+      <parameter id="p3t" value="0.0615093080176961" constant="true"/>
+      <parameter id="mp4t" value="0.496268231237839" constant="true"/>
+      <parameter id="mp5t" value="0.000635712989498298" constant="true"/>
+      <parameter id="nt4" value="29.912032281753" constant="true"/>
+      <parameter id="g12t" value="7.63219554174991" constant="true"/>
+      <parameter id="at3" value="5.53830451337711" constant="true"/>
+      <parameter id="g13t" value="0.187400841571509" constant="true"/>
+      <parameter id="g14t" value="0.0286301718660835" constant="true"/>
+      <parameter id="g15t" value="35.0177073447165" constant="true"/>
+      <parameter id="gmt" value="1" constant="true"/>
+      <parameter id="m4t" value="0.222188513898683" constant="true"/>
+      <parameter id="p4t" value="0.0122570686623099" constant="true"/>
+      <parameter id="mp6t" value="0.0799695902641432" constant="true"/>
+      <parameter id="mp7t" value="0.0536272828682829" constant="true"/>
+      <parameter id="p5t" value="2.05195079806912" constant="true"/>
+      <parameter id="mp8t" value="0.358599276784736" constant="true"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="cGn_tot">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> cGn </ci>
+            <ci> cEGn </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="cL_m_trscr" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cL_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cT"/>
+          <modifierSpeciesReference species="cP7"/>
+          <modifierSpeciesReference species="cP"/>
+          <modifierSpeciesReference species="cP5"/>
+          <modifierSpeciesReference species="cP9"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> q1 </ci>
+                    <ci> L </ci>
+                    <ci> cP </ci>
+                    <ci> gml </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> n1 </ci>
+                        <apply>
+                          <power/>
+                          <ci> g1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <ci> g1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <apply>
+                            <plus/>
+                            <ci> cP9 </ci>
+                            <ci> cP7 </ci>
+                            <ci> cP5 </ci>
+                            <ci> cT </ci>
+                          </apply>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <ci> gml </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> m1 </ci>
+                      <ci> L </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> m2 </ci>
+                      <apply>
+                        <minus/>
+                        <cn type="integer"> 1 </cn>
+                        <ci> L </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> cL_m </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cL_m_trans" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cL" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cL_m"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <plus/>
+                        <ci> p2 </ci>
+                        <apply>
+                          <times/>
+                          <ci> p1 </ci>
+                          <ci> L </ci>
+                        </apply>
+                      </apply>
+                      <ci> cL_m </ci>
+                    </apply>
+                    <ci> gml </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> m3 </ci>
+                    <ci> cL </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> p3 </ci>
+                    <apply>
+                      <power/>
+                      <ci> cL </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> cL </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g3 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cL_mod_pro" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cLmod" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cL"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> p3 </ci>
+                    <apply>
+                      <power/>
+                      <ci> cL </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> cL </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g3 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m3 </ci>
+                  <ci> cLmod </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cP_prod" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cP" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> p7 </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> L </ci>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> cP </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m11 </ci>
+                  <ci> cP </ci>
+                  <ci> L </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cE4_trscr" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cE4_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cEC"/>
+          <modifierSpeciesReference species="cL"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <ci> n13 </ci>
+                          <ci> g2 </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <ci> g2 </ci>
+                          <ci> cEC </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> g6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <ci> g6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> cL </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> gm4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m34 </ci>
+                  <ci> cE4_m </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cE4_trans" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cE4" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cE3n"/>
+          <modifierSpeciesReference species="cE4_m"/>
+          <modifierSpeciesReference species="cE34"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> p23 </ci>
+                        <ci> cE4_m </ci>
+                      </apply>
+                      <ci> gm4 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> m35 </ci>
+                      <ci> cE4 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> p25 </ci>
+                    <ci> cE4 </ci>
+                    <ci> cE3n </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p21 </ci>
+                  <ci> cE34 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cE3_trscr" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cE3_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cL"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> n3 </ci>
+                      <apply>
+                        <power/>
+                        <ci> g16 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <ci> g16 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> cL </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> gm3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m26 </ci>
+                  <ci> cE3_m </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cE3c_trans" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cE3c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cE3n"/>
+          <modifierSpeciesReference species="cGc"/>
+          <modifierSpeciesReference species="cE3_m"/>
+          <modifierSpeciesReference species="cCOP1c"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <ci> p16 </ci>
+                          <ci> cE3_m </ci>
+                        </apply>
+                        <ci> gm3 </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> m9 </ci>
+                        <ci> cE3c </ci>
+                        <ci> cCOP1c </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> p17 </ci>
+                      <ci> cE3c </ci>
+                      <ci> cGc </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> p19 </ci>
+                    <ci> cE3c </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p20 </ci>
+                  <ci> cE3n </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cE3n_trans" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cE3n" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cGn"/>
+          <modifierSpeciesReference species="cE34"/>
+          <modifierSpeciesReference species="cE4"/>
+          <modifierSpeciesReference species="cE3c"/>
+          <modifierSpeciesReference species="cCOP1n"/>
+          <modifierSpeciesReference species="cCOP1d"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <minus/>
+                        <apply>
+                          <minus/>
+                          <apply>
+                            <times/>
+                            <ci> p19 </ci>
+                            <ci> cE3c </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <ci> p20 </ci>
+                            <ci> cE3n </ci>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <ci> p17 </ci>
+                          <ci> cE3n </ci>
+                          <ci> cGn </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> m30 </ci>
+                        <ci> cE3n </ci>
+                        <ci> cCOP1d </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> m29 </ci>
+                      <ci> cE3n </ci>
+                      <ci> cCOP1n </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> p21 </ci>
+                    <ci> cE34 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p25 </ci>
+                  <ci> cE4 </ci>
+                  <ci> cE3n </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cLUX_trscr" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cLUX_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cEC"/>
+          <modifierSpeciesReference species="cL"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <ci> n13 </ci>
+                          <ci> g2 </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <ci> g2 </ci>
+                          <ci> cEC </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> g6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <ci> g6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> cL </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> gm4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m34 </ci>
+                  <ci> cLUX_m </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cLUX_trans" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cLUX" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cLUX_m"/>
+          <modifierSpeciesReference species="cE34"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> p27 </ci>
+                      <ci> cLUX_m </ci>
+                    </apply>
+                    <ci> gm4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> m39 </ci>
+                    <ci> cLUX </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p26 </ci>
+                  <ci> cLUX </ci>
+                  <ci> cE34 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cCOP1c_prod" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cCOP1c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <ci> n5 </ci>
+                  <apply>
+                    <times/>
+                    <ci> p6 </ci>
+                    <ci> cCOP1c </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m27 </ci>
+                  <ci> cCOP1c </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <times/>
+                      <ci> p15 </ci>
+                      <ci> L </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cCOP1n_trans" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cCOP1n" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cP"/>
+          <modifierSpeciesReference species="cCOP1c"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <times/>
+                      <ci> p6 </ci>
+                      <ci> cCOP1c </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> n6 </ci>
+                      <ci> L </ci>
+                      <ci> cP </ci>
+                      <ci> cCOP1n </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> n14 </ci>
+                    <ci> cCOP1n </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m27 </ci>
+                  <ci> cCOP1n </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <times/>
+                      <ci> p15 </ci>
+                      <ci> L </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cCOP1d_trans" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cCOP1d" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cP"/>
+          <modifierSpeciesReference species="cCOP1n"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> n14 </ci>
+                    <ci> cCOP1n </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> n6 </ci>
+                    <ci> L </ci>
+                    <ci> cP </ci>
+                    <ci> cCOP1n </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m31 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <times/>
+                      <ci> m33 </ci>
+                      <apply>
+                        <minus/>
+                        <cn type="integer"> 1 </cn>
+                        <ci> L </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> cCOP1d </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cEGc_prod" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cEGc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cEGn"/>
+          <modifierSpeciesReference species="cGc"/>
+          <modifierSpeciesReference species="cE3c"/>
+          <modifierSpeciesReference species="cCOP1c"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <times/>
+                      <ci> p17 </ci>
+                      <ci> cE3c </ci>
+                      <ci> cGc </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> m9 </ci>
+                      <ci> cEGc </ci>
+                      <ci> cCOP1c </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> p18 </ci>
+                    <ci> cEGc </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p31 </ci>
+                  <ci> cEGn </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cEC_form" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cEC" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cLUX"/>
+          <modifierSpeciesReference species="cE34"/>
+          <modifierSpeciesReference species="cCOP1n"/>
+          <modifierSpeciesReference species="cCOP1d"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <times/>
+                      <ci> p26 </ci>
+                      <ci> cLUX </ci>
+                      <ci> cE34 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> m36 </ci>
+                      <ci> cEC </ci>
+                      <ci> cCOP1n </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> m37 </ci>
+                    <ci> cEC </ci>
+                    <ci> cCOP1d </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m32 </ci>
+                  <ci> cEC </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> p24 </ci>
+                        <ci> L </ci>
+                        <apply>
+                          <power/>
+                          <ci> cGn_tot </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <ci> g7 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> cGn_tot </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cZTL_prod" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cZTL" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cZG"/>
+          <modifierSpeciesReference species="cGc"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> p14 </ci>
+                    <apply>
+                      <times/>
+                      <ci> p12 </ci>
+                      <ci> L </ci>
+                      <ci> cZTL </ci>
+                      <ci> cGc </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> p13 </ci>
+                    <ci> cZG </ci>
+                    <apply>
+                      <minus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> L </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m20 </ci>
+                  <ci> cZTL </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cZG_prod" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cZG" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cZTL"/>
+          <modifierSpeciesReference species="cGc"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <times/>
+                    <ci> p12 </ci>
+                    <ci> L </ci>
+                    <ci> cZTL </ci>
+                    <ci> cGc </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> p13 </ci>
+                    <ci> cZG </ci>
+                    <apply>
+                      <minus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> L </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m21 </ci>
+                  <ci> cZG </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cG_m_trscr" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cG_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cEC"/>
+          <modifierSpeciesReference species="cP"/>
+          <modifierSpeciesReference species="cL"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> L </ci>
+                    <ci> q2 </ci>
+                    <ci> cP </ci>
+                    <ci> gmg </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <times/>
+                            <ci> n12 </ci>
+                            <ci> g14 </ci>
+                          </apply>
+                          <apply>
+                            <plus/>
+                            <ci> g14 </ci>
+                            <ci> cEC </ci>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> g15 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <ci> g15 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> cL </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <ci> gmg </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m18 </ci>
+                  <ci> cG_m </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cG_trans" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cGc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cZTL"/>
+          <modifierSpeciesReference species="cGn"/>
+          <modifierSpeciesReference species="cZG"/>
+          <modifierSpeciesReference species="cG_m"/>
+          <modifierSpeciesReference species="cE3c"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <minus/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <times/>
+                              <ci> p11 </ci>
+                              <ci> cG_m </ci>
+                            </apply>
+                            <ci> gmg </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <ci> p12 </ci>
+                            <ci> L </ci>
+                            <ci> cZTL </ci>
+                            <ci> cGc </ci>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <ci> p13 </ci>
+                          <ci> cZG </ci>
+                          <apply>
+                            <minus/>
+                            <cn type="integer"> 1 </cn>
+                            <ci> L </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> m19 </ci>
+                        <ci> cGc </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> p17 </ci>
+                      <ci> cE3c </ci>
+                      <ci> cGc </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> p28 </ci>
+                    <ci> cGc </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p29 </ci>
+                  <ci> cGn </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cGn_traspo" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cGn" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cE3n"/>
+          <modifierSpeciesReference species="cGc"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> p28 </ci>
+                  <ci> cGc </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> p29 </ci>
+                    <ci> m19 </ci>
+                    <apply>
+                      <times/>
+                      <ci> p17 </ci>
+                      <ci> cE3n </ci>
+                    </apply>
+                  </apply>
+                  <ci> cGn </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cE34_compl" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cE34" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cE3n"/>
+          <modifierSpeciesReference species="cLUX"/>
+          <modifierSpeciesReference species="cE4"/>
+          <modifierSpeciesReference species="cCOP1n"/>
+          <modifierSpeciesReference species="cCOP1d"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> p25 </ci>
+                  <ci> cE4 </ci>
+                  <ci> cE3n </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> p26 </ci>
+                      <ci> cLUX </ci>
+                    </apply>
+                    <ci> p21 </ci>
+                    <apply>
+                      <times/>
+                      <ci> m37 </ci>
+                      <ci> cCOP1d </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> m36 </ci>
+                      <ci> cCOP1n </ci>
+                    </apply>
+                  </apply>
+                  <ci> cE34 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cEGn_tranp" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cEGn" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cE3n"/>
+          <modifierSpeciesReference species="cEGc"/>
+          <modifierSpeciesReference species="cGn"/>
+          <modifierSpeciesReference species="cCOP1n"/>
+          <modifierSpeciesReference species="cCOP1d"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> p18 </ci>
+                    <ci> cEGc </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> p17 </ci>
+                    <ci> cE3n </ci>
+                    <ci> cGn </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> m9 </ci>
+                      <ci> cCOP1n </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> m10 </ci>
+                      <ci> cCOP1d </ci>
+                    </apply>
+                    <ci> p31 </ci>
+                  </apply>
+                  <ci> cEGn </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cP9mt_synt" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cP9_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cT"/>
+          <modifierSpeciesReference species="cEC"/>
+          <modifierSpeciesReference species="cLmod"/>
+          <modifierSpeciesReference species="cP"/>
+          <modifierSpeciesReference species="cP5"/>
+          <modifierSpeciesReference species="cL"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> q3t </ci>
+                    <ci> L </ci>
+                    <ci> cP </ci>
+                    <ci> gm9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <divide/>
+                              <apply>
+                                <times/>
+                                <apply>
+                                  <divide/>
+                                  <apply>
+                                    <times/>
+                                    <ci> nt1 </ci>
+                                    <apply>
+                                      <plus/>
+                                      <ci> g1t </ci>
+                                      <apply>
+                                        <times/>
+                                        <ci> at1 </ci>
+                                        <ci> cLmod </ci>
+                                      </apply>
+                                    </apply>
+                                  </apply>
+                                  <apply>
+                                    <plus/>
+                                    <ci> g1t </ci>
+                                    <ci> cLmod </ci>
+                                  </apply>
+                                </apply>
+                                <apply>
+                                  <power/>
+                                  <ci> g2t </ci>
+                                  <cn type="integer"> 2 </cn>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <plus/>
+                                <apply>
+                                  <power/>
+                                  <ci> g2t </ci>
+                                  <cn type="integer"> 2 </cn>
+                                </apply>
+                                <apply>
+                                  <power/>
+                                  <ci> cL </ci>
+                                  <cn type="integer"> 2 </cn>
+                                </apply>
+                              </apply>
+                            </apply>
+                            <ci> g3t </ci>
+                          </apply>
+                          <apply>
+                            <plus/>
+                            <ci> g3t </ci>
+                            <ci> cEC </ci>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> g4t </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <ci> g4t </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <apply>
+                            <plus/>
+                            <ci> cP5 </ci>
+                            <ci> cT </ci>
+                          </apply>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <ci> gm9 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m1t </ci>
+                  <ci> cP9_m </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cP9t_synt" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cP9" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cP9_m"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> p1t </ci>
+                    <ci> cP9_m </ci>
+                  </apply>
+                  <ci> gm9 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> mp1t </ci>
+                  <ci> cP9 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cP7msynt" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cP7_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cT"/>
+          <modifierSpeciesReference species="cEC"/>
+          <modifierSpeciesReference species="cP5"/>
+          <modifierSpeciesReference species="cL"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <times/>
+                              <ci> nt2 </ci>
+                              <apply>
+                                <power/>
+                                <ci> g5t </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <plus/>
+                              <apply>
+                                <power/>
+                                <ci> g5t </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> cL </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                          </apply>
+                          <ci> g6t </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <ci> g6t </ci>
+                          <ci> cEC </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> g7t </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <ci> g7t </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <apply>
+                          <plus/>
+                          <ci> cP5 </ci>
+                          <ci> cT </ci>
+                        </apply>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> gm7 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m2t </ci>
+                  <ci> cP7_m </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cP7tsynt" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cP7" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cP7_m"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> p2t </ci>
+                    <ci> cP7_m </ci>
+                  </apply>
+                  <ci> gm7 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> mp2t </ci>
+                    <apply>
+                      <times/>
+                      <ci> mp3t </ci>
+                      <apply>
+                        <minus/>
+                        <cn type="integer"> 1 </cn>
+                        <ci> L </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> cP7 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cP5mtsynt" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cP5_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cT"/>
+          <modifierSpeciesReference species="cEC"/>
+          <modifierSpeciesReference species="cLmod"/>
+          <modifierSpeciesReference species="cL"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <divide/>
+                                <apply>
+                                  <times/>
+                                  <ci> nt3 </ci>
+                                  <apply>
+                                    <plus/>
+                                    <ci> g8t </ci>
+                                    <apply>
+                                      <times/>
+                                      <ci> at2 </ci>
+                                      <ci> cLmod </ci>
+                                    </apply>
+                                  </apply>
+                                </apply>
+                                <apply>
+                                  <plus/>
+                                  <ci> g8t </ci>
+                                  <ci> cLmod </ci>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> g9t </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <plus/>
+                              <apply>
+                                <power/>
+                                <ci> g9t </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> cL </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                          </apply>
+                          <ci> g10t </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <ci> g10t </ci>
+                          <ci> cEC </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> g11t </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <ci> g11t </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> cT </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> gm5 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m3t </ci>
+                  <ci> cP5_m </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cP5tsynt" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cP5" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cP5_m"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> p3t </ci>
+                    <ci> cP5_m </ci>
+                  </apply>
+                  <ci> gm5 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> mp4t </ci>
+                    <apply>
+                      <times/>
+                      <ci> mp5t </ci>
+                      <apply>
+                        <minus/>
+                        <cn type="integer"> 1 </cn>
+                        <ci> L </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> cP5 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cTmtsynt" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cT_m" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cT"/>
+          <modifierSpeciesReference species="cEC"/>
+          <modifierSpeciesReference species="cLmod"/>
+          <modifierSpeciesReference species="cL"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <divide/>
+                                <apply>
+                                  <times/>
+                                  <ci> nt4 </ci>
+                                  <apply>
+                                    <plus/>
+                                    <ci> g12t </ci>
+                                    <apply>
+                                      <times/>
+                                      <ci> at3 </ci>
+                                      <ci> cLmod </ci>
+                                    </apply>
+                                  </apply>
+                                </apply>
+                                <apply>
+                                  <plus/>
+                                  <ci> g12t </ci>
+                                  <ci> cLmod </ci>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> g13t </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <plus/>
+                              <apply>
+                                <power/>
+                                <ci> g13t </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> cL </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                          </apply>
+                          <ci> g14t </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <ci> g14t </ci>
+                          <ci> cEC </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> g15t </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <ci> g15t </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> cT </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> gmt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m4t </ci>
+                  <ci> cT_m </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cTtsynt" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="cT" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cT_m"/>
+          <modifierSpeciesReference species="cZTL"/>
+          <modifierSpeciesReference species="cZG"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> p4t </ci>
+                      <ci> cT_m </ci>
+                    </apply>
+                    <ci> gmt </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <plus/>
+                      <ci> mp6t </ci>
+                      <apply>
+                        <times/>
+                        <ci> mp7t </ci>
+                        <apply>
+                          <minus/>
+                          <cn type="integer"> 1 </cn>
+                          <ci> L </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <ci> cT </ci>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <times/>
+                        <ci> p5t </ci>
+                        <ci> cZTL </ci>
+                      </apply>
+                      <ci> cZG </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> mp8t </ci>
+                  <ci> cT </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
